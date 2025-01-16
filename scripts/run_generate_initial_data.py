@@ -1,11 +1,15 @@
 import os
 import pandas as pd
 from generate_initial_data import generate_initial_data
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv("API_KEY")
 
 # Define the agent, model, and headers (update these with your actual values)
 agent = 'This is an agent for generating synthetic data.'
 # Set the headers for the API request, including the token for authentication
-token = 'G14d4iFJJcbymeHjbHSnNhJvKcRNLcIQ'  
+token = api_key
 headers = {
     'Authorization': f'Bearer {token}'
 }
