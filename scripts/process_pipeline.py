@@ -1,8 +1,11 @@
-# Import the required functions from their respective modules
 import os
 from update_data import update_product_csv_with_new_week_data
 from execute_notebook import execute_notebook
 from convert_notebook_to_html import convert_notebook_to_html
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv("API_KEY")
 
 def main():
     # Step 1: Update the CSV file with new weekly data
@@ -12,7 +15,7 @@ def main():
     # Define the agent, model, and headers (update these with your actual values)
     agent = 'This is an agent for generating synthetic data.'
     # Set the headers for the API request, including the token for authentication
-    token = 'G14d4iFJJcbymeHjbHSnNhJvKcRNLcIQ'  
+    token = api_key 
     headers = {
         'Authorization': f'Bearer {token}'
     }
